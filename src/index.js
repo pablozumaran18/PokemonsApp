@@ -3,11 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MenuSuperior from './componente/menuSuperior';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Pokemon from './pokemones/pokemons';
+import Combate from './combate/combate';
+import Historial from './historial/historial';
+import Lista from './lista/lista';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MenuSuperior></MenuSuperior>
+
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element ={<MenuSuperior/>}>
+      <Route path='/pokemon' element={<Pokemon/>} />
+      <Route path='/historial' element={<Historial/>} />
+      <Route path='/combate' element={<Combate/>} />
+      <Route path='/lista' element={<Lista/>} />
+      </Route>
+      
+    </Routes>
+
+  </BrowserRouter>
+    
+
   </React.StrictMode>
 );
 
