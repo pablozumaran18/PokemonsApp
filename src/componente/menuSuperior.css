@@ -1,0 +1,7 @@
+input{
+    margin-block-start: 50px;
+}
+
+Outlet{
+    margin-block-start: 10px;
+}
