@@ -11,8 +11,7 @@ const MenuSuperior = (props)=>{
       <Link to ="/combate"> combate</Link>
       <Link to ="/lista"> lista</Link>
       <br/>
-      <input type="text" className = "buscador"/>
-      <button> BUSCAR </button>
+
       <br/>
       <Outlet/>
       </>
