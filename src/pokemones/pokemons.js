@@ -21,6 +21,7 @@ const Pokemon =(props)=>{
                     console.log(data)
                     console.log(data.abilities)
                     console.log(data.moves)
+                    console.log(data.stats)
                     setPokemons(data)
 
                     setImageShiny(data.sprites.front_shiny)
@@ -45,23 +46,26 @@ const Pokemon =(props)=>{
 
     return(
         <> 
-        <input type={props.type} onChange={ (e) => {handleChange(e) }} className = "buscador"/>
-        <button onClick= "buscar" onClick ={clickUsuario}> BUSCAR </button>
+        <input type={props.type} onChange={ (e) => {handleChange(e) }} className = "buscador" id="inpute"/>
+        <button onClick= "buscar" onClick ={clickUsuario} id="butun"> BUSCAR  </button>
         <br/>
-        <img src={image} />
-        <img src={imageTrasera}/>
-        <img src={imageShiny} />
-        <img src={imageTraseraShiny}/>
+        <img src={image} id ="img" />
+        <img src={imageTrasera} id ="img"/>
+        <img src={imageShiny} id ="img" />
+        <img src={imageTraseraShiny} id ="img"/>
 
         <br/>
         <div id="titulos">NOMBRE </div>
-        <div>{pokemon.name} </div>
+        <div id="div">{pokemon.name} </div>
         <br/>
         <div id="titulos">PESO </div>
-        <div>{pokemon.weight}</div>
+        <div id="div">{pokemon.weight}</div>
         <br/>
 
-
+        <div id="titulos">ESTADISTICAS</div>
+        {pokemon.stats?.map((estadistica, idx) => {
+            return(<div id="div" key={idx}>{estadistica.stat.name}</div>)
+        })}
 
         <br/>
         <div id="titulos">HABILIDADES</div>
@@ -74,7 +78,7 @@ const Pokemon =(props)=>{
         <br/>
 
         <div id="titulos">EXPERIENCIA BASE </div>
-        <div> {pokemon.base_experience}
+        <div id="div"> {pokemon.base_experience}
         </div>
         <br/>
 

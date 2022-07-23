@@ -1,16 +1,19 @@
 #div{
     border-style: solid;
-    background-color: aqua;
+    background-color:darkgray;
     font-size: large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    max-width: 130px;
 
 }
 
 #div2{
     border-style: solid;
-    background-color: brown;
+    background-color:lightskyblue;
     font-size: large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 200px;
 }
 
 #titulos{
@@ -18,3 +21,21 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#inpute{
+    border-radius: 8px;
+    border-style:solid;
+}
+#butun{
+    background-color:darkcyan ;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+#img {
+    border-style: solid;
+    border-radius: 10px;
+    background-color: grey;
+    margin-block-start: 20px;
+}
