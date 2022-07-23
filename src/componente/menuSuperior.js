@@ -1,15 +1,15 @@
 import { Link, Outlet } from "react-router-dom"
-import './menuSuperior.css';
+import "./menuSuperior.css";
 const MenuSuperior = (props)=>{
     
    return(
       
       <>
       
-      <Link to ="/pokemon"> pokemon</Link>
-      <Link to ="/historial"> historial</Link>
-      <Link to ="/combate"> combate</Link>
-      <Link to ="/lista"> lista</Link>
+      <Link to ="/pokemon" id="link"> POKEMON </Link>
+      <Link to ="/historial"id="link"> HISTORIAL </Link>
+      <Link to ="/combate"id="link"> COMBATE </Link>
+      <Link to ="/lista"id="link"> LISTA</Link>
       <br/>
 
       <br/>

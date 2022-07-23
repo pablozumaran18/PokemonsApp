@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+import "./lista.css";
 const Lista = (props) => {
 
         const [pokemons, setPokemons] = useState([])
@@ -28,8 +29,10 @@ const Lista = (props) => {
     
             {/* {titulo} */}
 
+
+            <div id="titulodiv">NOMBRE DE POKEMON</div>
             {pokemons.map((pokemon) => {
-                return(<div>{pokemon.name}</div>)
+                return(<div id="table">{pokemon.name}</div>)
             })}
         </>
     )

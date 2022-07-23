@@ -1,0 +1,13 @@
+#table{
+    background-color: violet;
+    border-style: solid;
+    font-size: large;
+    font-family:cursive;
+}
+
+#titulodiv{
+    border-style: solid;
+    background-color: blueviolet;
+    font-size: large;
+    font-family: fantasy;
+}
