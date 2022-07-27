@@ -4,7 +4,6 @@ import "./pokemones.css"
 
 const Pokemon =(props)=>{
 
-    const [buscarPokemon, setbuscarPokemon] = useState([])
     const [pokemon, setPokemons] = useState([])
     const [laBusqueda,setlaBusqueda] = useState([])
     const [Texto, setTexto] = useState([])
@@ -12,6 +11,7 @@ const Pokemon =(props)=>{
     const [imageShiny, setImageShiny] = useState("")
     const[imageTrasera,setImagenTrasera] = useState("")
     const[imageTraseraShiny,setImagenTraseraShiny] = useState("")
+    const[Ubicacion,setUbicacion] = useState("")
 
     useEffect (() => {
         fetch ("https://pokeapi.co/api/v2/pokemon/"+ laBusqueda)
@@ -28,10 +28,17 @@ const Pokemon =(props)=>{
                     setImage(data.sprites.front_default)
                     setImagenTrasera(data.sprites.back_default)
                     setImagenTraseraShiny(data.sprites.back_shiny)
-
                 }
-            )
-             
+                )
+             fetch ("https://pokeapi.co/api/v2/pokemon/25/encounters")
+                .then(res => res.json())
+                .then(
+                    (data2 => {
+                        console.log(data2)
+                        setUbicacion(data2.location_area)
+
+                    })
+                )
 
         }   ,[Texto])
      
@@ -64,7 +71,7 @@ const Pokemon =(props)=>{
 
         <div id="titulos">ESTADISTICAS</div>
         {pokemon.stats?.map((estadistica, idx) => {
-            return(<div id="div" key={idx}>{estadistica.stat.name}</div>)
+            return(<div id="div" key={idx}>{estadistica.stat.name}: {estadistica.base_stat}</div>)
         })}
 
         <br/>
@@ -81,6 +88,11 @@ const Pokemon =(props)=>{
         <div id="div"> {pokemon.base_experience}
         </div>
         <br/>
+
+        {pokemon.location_area?.map((ubi, idx) => {
+            return(<div id="div" key={idx}>{ubi.name}</div>)
+        })}       
+
 
         <div id="titulos">MOVIMIENTOS </div>
         {pokemon.moves?.map((movimientos, idx) => {
