@@ -6,7 +6,11 @@ const Historial =(props)=>{
 
     return(
         <> 
-            Historial
+            <p> {props.busquedaH} </p>
+        
+            <p> {props.busquedaH} </p>
+
+            <p> {props.busquedaH} </p>
         </>
     )
 }
